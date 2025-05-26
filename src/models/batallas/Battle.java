@@ -1,7 +1,7 @@
 package models.batallas;
 
-import models.pokemones.Pokemon;
 import models.entrenadores.Trainer;
+import models.pokemones.Pokemon;
 
 import java.util.List;
 import java.util.Scanner;
@@ -139,7 +139,7 @@ public class Battle {
         }
 
     }
-    static boolean hasAdvantage(String attackType, String defenderType) {
+    public static boolean hasAdvantage(String attackType, String defenderType) {
         return switch (attackType) {
             case "Fire" -> defenderType.equals("Grass") || defenderType.equals("Steel");
             case "Water" -> defenderType.equals("Fire");

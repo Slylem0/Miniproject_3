@@ -1,10 +1,8 @@
-import models.gui.BattleSetupFrame;
+import controller.controller;
+import view.Gui.BattleSetupFrame;
 
-import javax.swing.*;
 
 public static void main(String[] args) {
-    SwingUtilities.invokeLater(() -> {
-        new BattleSetupFrame().setVisible(true);
-    });
+    new controller();
 }
 
