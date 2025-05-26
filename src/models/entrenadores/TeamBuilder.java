@@ -1,7 +1,7 @@
 package models.entrenadores;
 
-import models.pokemones.Pokemon;
 import models.batallas.Attack;
+import models.pokemones.Pokemon;
 import models.names.AttackName;
 import models.names.Name;
 

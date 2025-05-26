@@ -1,4 +1,4 @@
-package view;
+package view.Gui;
 
 //BIEN
 
@@ -7,13 +7,14 @@ import models.batallas.Attack;
 import models.batallas.BattleManager;
 import models.entrenadores.Trainer;
 import models.pokemones.Pokemon;
+import view.View;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static view.TrainerImages.scaleImage;
+import static view.Gui.TrainerImages.scaleImage;
 
-public class BattleFrame extends JFrame {
+public class BattleFrame extends JFrame implements View {
     private final Trainer entrenador1;
     private final Trainer entrenador2;
     private Pokemon pokemon1;

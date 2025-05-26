@@ -1,5 +1,5 @@
 
-package view;
+package view.Gui;
 
 import models.entrenadores.TeamBuilder;
 import models.entrenadores.Trainer;
@@ -87,14 +87,14 @@ public class BattleSetupFrame extends JFrame {
     }
 
     private void asignarEquiposAleatorios() {
-        // Aquí deberás implementar la lógica para crear equipos aleatorios
+
         entrenador1 = new Trainer(trainer1Field.getText());
         entrenador2 = new Trainer(trainer2Field.getText());
 
         TeamBuilder.generateRandomTeam(entrenador1);
         TeamBuilder.generateRandomTeam(entrenador2);
 
-        // Ejemplo de cómo mostrar los equipos
+
         team1Area.setText("Equipo de " + entrenador1.getName() + ":\n");
         team1Area.append("- " + entrenador1.toString() + "\n");
 
