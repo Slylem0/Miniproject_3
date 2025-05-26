@@ -39,6 +39,9 @@
  ┗ main.java            → Entry point of the application
 
 
+
+´´´
+
 # 1. Compila todos los archivos .java que están organizados en subdirectorios bajo /src
 javac -d bin src/**/*.java
 
