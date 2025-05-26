@@ -1,6 +1,6 @@
 package view.Gui;
 
-import models.entrenadores.TeamBuilder;
+import controller.controller;
 import models.entrenadores.Trainer;
 
 import javax.swing.*;
@@ -94,8 +94,8 @@ public class BattleSetupFrame extends JFrame {
         entrenador1 = new Trainer(trainer1Field.getText());
         entrenador2 = new Trainer(trainer2Field.getText());
 
-        TeamBuilder.generateRandomTeam(entrenador1);
-        TeamBuilder.generateRandomTeam(entrenador2);
+        controller.TeamBuilder.generateRandomTeam(entrenador1);
+        controller.TeamBuilder.generateRandomTeam(entrenador2);
 
 
         team1Area.setText("Equipo de " + entrenador1.getName() + ":\n");
