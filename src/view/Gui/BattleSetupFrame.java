@@ -1,4 +1,3 @@
-
 package view.Gui;
 
 import models.entrenadores.TeamBuilder;
@@ -6,6 +5,7 @@ import models.entrenadores.Trainer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.function.BiConsumer;
 
 public class BattleSetupFrame extends JFrame {
     private final JTextField trainer1Field;
@@ -16,6 +16,7 @@ public class BattleSetupFrame extends JFrame {
     private final JButton startBattleButton;
     private Trainer entrenador1;
     private Trainer entrenador2;
+    private BiConsumer<String, String> onTeamsAssigned;
 
     public BattleSetupFrame() {
         // Configuración básica del frame
@@ -66,6 +67,8 @@ public class BattleSetupFrame extends JFrame {
         setupListeners();
     }
 
+
+
     private void setupListeners() {
         assignTeamsButton.addActionListener(e -> {
             if (trainer1Field.getText().trim().isEmpty() || trainer2Field.getText().trim().isEmpty()) {
@@ -101,6 +104,9 @@ public class BattleSetupFrame extends JFrame {
 
         team2Area.setText("Equipo de " + entrenador2.getName() + ":\n");
         team2Area.append("- " + entrenador2.toString() + "\n");
+        if (onTeamsAssigned != null) {
+            notificarTeamsAssigned();
+        }
     }
 
     private void iniciarBatalla() {
@@ -113,5 +119,16 @@ public class BattleSetupFrame extends JFrame {
         SwingUtilities.invokeLater(() -> {
             new BattleSetupFrame().setVisible(true);
         });
+    }
+    // En src/view/Gui/BattleSetupFrame.java
+
+    public void setOnTeamsAssigned(BiConsumer<String, String> listener) {
+        this.onTeamsAssigned = listener;
+    }
+
+    public void notificarTeamsAssigned() {
+        if (onTeamsAssigned != null) {
+            onTeamsAssigned.accept(trainer1Field.getText(), trainer2Field.getText());
+        }
     }
 }
