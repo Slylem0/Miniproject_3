@@ -3,8 +3,8 @@ package view.Gui;
 //BIEN
 
 
+import controller.controller;
 import models.batallas.Attack;
-import models.batallas.BattleManager;
 import models.entrenadores.Trainer;
 import models.pokemones.Pokemon;
 import view.View;
@@ -125,7 +125,7 @@ private void ejecutarAtaque(int attackIndex) {
     }
 
     Attack attack = attacker.getAttacks().get(attackIndex);
-    int damage = BattleManager.calculateDamage(attack, attacker, defender);
+    int damage = controller.BattleManager.calculateDamage(attack, attacker, defender);
     defender.receiveDamage(damage);
 
     battleLog.append(String.format("%s usa %s y causa %d de daño!\n",
